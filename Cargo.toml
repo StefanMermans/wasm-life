@@ -13,3 +13,10 @@ crate-type = ["cdylib"]
 
 [dependencies]
 wasm-bindgen = "0.2.87"
+
+[dependencies.web-sys]
+version = "0.3.64"
+features = [
+  'CanvasRenderingContext2d',
+  'ImageData'
+]
