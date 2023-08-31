@@ -1,0 +1,15 @@
+[package]
+name = "wasm-life"
+version = "0.1.0"
+edition = "2021"
+authors = ["Stefan Mermans <stefanmermans99@gmail.com>"]
+description = "Practice rust"
+license = "MIT/Apache-2.0"
+repository = "https://github.com/StefanMermans/wasm-life"
+
+[lib]
+crate-type = ["cdylib"]
+
+
+[dependencies]
+wasm-bindgen = "0.2.87"
