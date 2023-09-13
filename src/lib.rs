@@ -41,7 +41,7 @@ pub struct RustLife {
 impl RustLife {
     pub fn new() -> Self {
         Self {
-            life: Life::new(WIDTH, HEIGHT, false),
+            life: Life::new(WIDTH, HEIGHT, false, true),
             width: WIDTH,
             height: HEIGHT,
         }

@@ -11,30 +11,32 @@ pub struct Life {
 }
 
 impl Life {
-    pub fn new(width: i32, height: i32, lively_edges: bool) -> Self {
+    pub fn new(width: i32, height: i32, lively_edges: bool, seed: bool) -> Self {
         let mut life = Self { 
             world: World::new(width, height, lively_edges),
             screen: Screen::new(width, height),
         };
 
-        life.set_state_at(true, &Point::new(20, 20));
-        life.set_state_at(true, &Point::new(20, 21));
-        life.set_state_at(true, &Point::new(20, 22));
+        if seed {
+            life.set_state_at(true, &Point::new(20, 20));
+            life.set_state_at(true, &Point::new(20, 21));
+            life.set_state_at(true, &Point::new(20, 22));
 
-        // Top
-        life.set_state_at(true, &Point::new(100, 100));
-        life.set_state_at(true, &Point::new(100, 101));
-        life.set_state_at(true, &Point::new(100, 102));
-       
-        // Left
-        life.set_state_at(true, &Point::new(98, 104));
-        life.set_state_at(true, &Point::new(97, 104));
-        life.set_state_at(true, &Point::new(96, 104));
+            // Top
+            life.set_state_at(true, &Point::new(100, 100));
+            life.set_state_at(true, &Point::new(100, 101));
+            life.set_state_at(true, &Point::new(100, 102));
+        
+            // Left
+            life.set_state_at(true, &Point::new(98, 104));
+            life.set_state_at(true, &Point::new(97, 104));
+            life.set_state_at(true, &Point::new(96, 104));
 
-        // Right
-        life.set_state_at(true, &Point::new(102, 104));
-        life.set_state_at(true, &Point::new(103, 102));
-        life.set_state_at(true, &Point::new(104, 102));
+            // Right
+            life.set_state_at(true, &Point::new(102, 104));
+            life.set_state_at(true, &Point::new(103, 102));
+            life.set_state_at(true, &Point::new(104, 102));
+        }
 
         life
     }

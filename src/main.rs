@@ -8,7 +8,7 @@ mod life;
 mod point;
 
 fn main() {
-    let mut life = Life::new(20, 20, false);
+    let mut life = Life::new(20, 20, false, false);
     life.set_state_at(true, &Point::new(0, 1));
     life.set_state_at(true,&Point::new(1, 1));
     life.set_state_at(true,&Point::new(2, 1));
