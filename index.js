@@ -8,6 +8,10 @@ function setupGame() {
   const rustLife = RustLife.new();
   canvas.width = rustLife.width();
   canvas.height = rustLife.height();
+  canvas.addEventListener('click', (event) => {
+    console.log('click', event.offsetX, event.offsetY)
+    rustLife.click(event.offsetX, event.offsetY);
+  })
 
   requestAnimationFrame(() => onFrame(rustLife, canvas.getContext('2d')));
 }
@@ -19,4 +23,8 @@ function setupGame() {
  */
 function onFrame(rustLife, context) {
     rustLife.on_frame(context);
+
+    setTimeout(() => {
+        requestAnimationFrame(() => onFrame(rustLife, context))
+    }, 50)
 }

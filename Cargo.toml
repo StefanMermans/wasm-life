@@ -8,7 +8,13 @@ license = "MIT/Apache-2.0"
 repository = "https://github.com/StefanMermans/wasm-life"
 
 [lib]
+name = "wasm_life"
 crate-type = ["cdylib"]
+path = "src/lib.rs"
+
+[[bin]]
+name = "life"
+path = "src/main.rs"
 
 
 [dependencies]
